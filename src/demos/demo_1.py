@@ -22,9 +22,16 @@ class LinkedListNode():
         self.next  = None
 
 def delete_node(delete_this_node):
-    # Your code here
-    pass
-
+    # set not to node you want to delete
+    next = delete_this_node.next
+    # does this node exist?
+    if next:
+        # Set this nodes value to the value of the next node
+        delete_this_node.value = next.value
+        #set this node to its nexts next
+        delete_this_node.next = next.next
+    else: 
+        raise Exception('Doesnt work on last node.')
 
 x = LinkedListNode('X')
 y = LinkedListNode('Y')
